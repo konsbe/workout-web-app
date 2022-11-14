@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.mainClose {
+  width: 100%;
+  padding: 20px;
+  transition: all 0.5s;
+  margin-left:40px ;
+}
+.mainOpen {
+  transition: all 0.5s;
+  width: 100%;
+  padding: 20px;
+  margin-left:190px ;
+}
+
+.sidebar {
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  width: 195px;
+  transition: all 0.5s;
+  position: fixed;
+}
+.top_section {
+  display: flex;
+  transition: all 0.5s;
+  position: absolute;
+}
+.menuItems {
+  position: absolute;
+  margin-top: 150px;
+}
+.svgIcon {
+  position: absolute;
+  transition: all 0.5s;
+  margin-left: 30px;
+  top: 50%;
+  transform: translate(-50%, 0);
+}
+
+.svgIconActive {
+  position: absolute;
+  margin-left: 40;
+  transition: all 0.5s;
+  margin-left: 150px;
+  top: 50%;
+  transform: translate(-50%, 0);
+  transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.logoOpen {
+  font-size: 30px;
+}
+.logoClose {
+  display: none;
+}
+
+.link {
+  display: flex;
+  color: #fff;
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+.link:hover {
+  background: lightskyblue;
+  color: #000;
+  transition: all 0.5s;
+  box-shadow: 0px 0px 5px red;
+}
+.active {
+  background: lightskyblue;
+  color: #000;
+}
+.icon,
+.link_text {
+  font-size: 20px;
+  /* position: absolute; */
+}
+.active{
+  color: #000;
+  box-shadow: 0px 0px 5px red;
+  background: lightskyblue;
+}

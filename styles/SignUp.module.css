@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+
+.fieldsContainer{
+    width: 50%;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.mainSectorColumns{
+    width: 45%;
+}
+
+.signUpButton{
+    width:50%;
+  }
+  
+
+.fontBack{
+    font-family: 'Creepster', cursive;
+}

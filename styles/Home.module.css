@@ -1,7 +1,6 @@
 .container {
   padding: 0 2rem;
 }
-
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -10,6 +9,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.mainSectorRowFlex{
+  display: flex;
+  flex-direction: row;
+}
+.mainSectorColumnFlex{
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
@@ -127,3 +134,4 @@
     filter: invert(1);
   }
 }
+
