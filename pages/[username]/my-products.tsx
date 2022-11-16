@@ -1,8 +1,12 @@
-import React from 'react'
+import React from "react";
+import Courses from "../../components/Cards/cardHeigh";
 
 export const Products = () => {
   return (
-    <div>MyProducts</div>
-  )
-}
-export default Products
+    <>
+      <div>MyProducts</div>
+      <Courses/>
+    </>
+  );
+};
+export default Products;
