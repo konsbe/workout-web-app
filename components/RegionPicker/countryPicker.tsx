@@ -2,12 +2,10 @@ import React, { Component, useState } from "react";
 import {
   CountryDropdown,
   RegionDropdown,
-  CountryRegionData,
 } from "react-country-region-selector";
-import "react-country-dropdown/dist/index.css";
+// import "react-country-dropdown/dist/index.css";
 import ReactFlagsSelect from "react-flags-select";
 import styles from "./CountryPicker.module.css";
-import { ReactCountryDropdown } from "react-country-dropdown";
 
 type CoutryType = {
   name: string;
@@ -17,7 +15,7 @@ type CoutryType = {
   latlng: number[];
 };
 
-export const CountryPicker = ({ trainerData, setTrainerData }) => {
+export const CountryPicker = ({ trainerData, setTrainerData }:{ trainerData:any, setTrainerData:any }) => {
   const [selected, setSelected] = useState("");
   const [region, setRegion] = useState("");
   const [flagId, setFlagId] = useState("");

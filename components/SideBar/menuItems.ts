@@ -13,7 +13,7 @@ import {
 export type menuItemType = {
   path: string;
   name: string;
-  Icon: IconType | ReactNode | JSX.Element;
+  Icon: any;
 }[];
 
 export const menuItems: menuItemType = [

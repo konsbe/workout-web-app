@@ -9,7 +9,7 @@ export interface IProps {
     baseImage:any;
     errorField:string[];
     trainerData:ITrainerData;
-    setTrainerData:(e:any) => ITrainerData;
+    setTrainerData:(e:any) => ITrainerData | any;
     uploadImage:(e:any) => void
 }
 const SignUpComponent = (props:IProps) => {

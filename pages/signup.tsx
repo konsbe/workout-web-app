@@ -3,6 +3,7 @@ import Head from "next/head";
 import React, { useReducer, useState } from "react";
 import { createTrainer } from "../api/trainer.api";
 import SignUpComponent from "../components/SignUp";
+import IbanValidation  from "../controllers/helpers/ibanValidation";
 import userReducer from "../controllers/reducers/user.reducer";
 import styles from "../styles/Home.module.css";
 import styling from "../styles/SignUp.module.css";
@@ -22,14 +23,15 @@ const Signup = () => {
   const [trainerData, setTrainerData] =
     useState<ITrainerData>(INITIAL_TRAINER_DATA);
   const [INITIAL_STATE, dispatch] = useReducer(userReducer, trainerData);
-
-  const uploadImage = async (e) => {
+  var template = new IbanValidation("GB82WEST12345698765432");
+  template.check_iban();
+  const uploadImage = async (e:React.ChangeEvent<HTMLInputElement> | any) => {
     const file = e.target.files[0];
-    const base64: Base64<"png" | "jpg" | "jpeg"> = await convertBase64(file);
+    const base64: Base64<"png" | "jpg" | "jpeg"> | any = await convertBase64(file);
     setBaseImage(base64);
   };
 
-  const convertBase64 = (file) => {
+  const convertBase64 = (file:any) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
@@ -88,41 +90,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-const iban = "GB82WEST12345698765432";
-const letter_dic = {"A": 10, "B": 11, "C": 12, "D": 13, "E": 14, "F": 15, "G": 16, "H": 17, "I": 18, "J": 19, "K": 20,
-              "L": 21, "M": 22, "N": 23, "O": 24, "P": 25, "Q": 26, "R": 27, "S": 28, "T": 29, "U": 30, "V": 31,
-              "W": 32, "X": 33, "Y": 34, "Z": 35,
-              "0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9}
-
-const letters_to_numbers = (arr:[],result) => {
-  result
-      .join("")
-      .split("")
-      .forEach(function (c: string) {
-        arr.push(letter_dic[`${c}`]);
-        // console.log(letter_dic[`${c}`]);
-        // return letter_dic[`${c}`];
-      });
-};
-const modulo = (divident, divisor=97) => {
-  var partLength = 10;
-
-  while (divident.length > partLength) {
-      var part = divident.substring(0, partLength);
-      divident = (part % divisor) +  divident.substring(partLength);          
-  }
-
-  return divident % divisor;
-}
-const is_valid_iban = (ibank) => {
-  const result = ibank.match(/.{1,4}/g) ?? [];
-  result.push(result.shift());
-  let number_form: [] = [];
-  letters_to_numbers(number_form,result);
-  
-  
-  return modulo(number_form.join(""))
-}
-
-console.log("sumnums: ", is_valid_iban(iban));
