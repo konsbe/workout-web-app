@@ -12,7 +12,7 @@ export const Products = () => {
     setShowModal(!showModal);
   };
   const toggleOpenModal = () => {
-    if(showModal) setShowModal(!showModal);
+    if (showModal) setShowModal(!showModal);
   };
 
   return (
@@ -25,8 +25,7 @@ export const Products = () => {
         modalHeader={"add new personal course"}>
         <CourseForm toggleModal={toggleModal} />
       </ModalComponent>
-      {/* {showAddCourse && <CourseForm />} */}
-      <Courses toggleOpenModal={toggleOpenModal}/>
+      <Courses toggleOpenModal={toggleOpenModal} />
     </>
   );
 };

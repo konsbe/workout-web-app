@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from "./SideBar.module.css";
 import { menuItems } from "./menuItems";
 import { useRouter } from "next/router";
+import { Avatar } from "@mui/material";
 
 const Sidebar = ({ children }: any) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,14 @@ const Sidebar = ({ children }: any) => {
           <TbArrowBigRightLines size={40} onClick={toggle} />
         </div>
         <div className={styles.top_section}>
-          <h1 className={isOpen ? styles.logoOpen : styles.logoClose}>Logo</h1>
+        <Avatar
+            alt="Remy Sharp"
+            sx={{ width: 120, height: 120 }}
+            // src={}
+            // style={{ display: isOpen ? "" : "none", flexShrink:"2" }}
+            className={isOpen ? styles.avatarOpen : styles.avatarClose}
+          />
+          {/* <h1 className={isOpen ? styles.logoOpen : styles.logoClose}>Logo</h1> */}
         </div>
         <div className={styles.menuItems}>
           {menuItems.map(({ Icon, ...item }, index) => (

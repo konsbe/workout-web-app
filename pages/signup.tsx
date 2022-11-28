@@ -3,7 +3,7 @@ import Head from "next/head";
 import React, { useReducer, useState } from "react";
 import { createTrainer } from "../api/trainer.api";
 import SignUpComponent from "../components/SignUp";
-import IbanValidation  from "../controllers/helpers/ibanValidation";
+import IbanValidation from "../controllers/helpers/ibanValidation";
 import userReducer from "../controllers/reducers/user.reducer";
 import styles from "../styles/Home.module.css";
 import styling from "../styles/SignUp.module.css";
@@ -25,13 +25,15 @@ const Signup = () => {
   const [INITIAL_STATE, dispatch] = useReducer(userReducer, trainerData);
   var template = new IbanValidation("GB82WEST12345698765432");
   template.check_iban();
-  const uploadImage = async (e:React.ChangeEvent<HTMLInputElement> | any) => {
+  const uploadImage = async (e: React.ChangeEvent<HTMLInputElement> | any) => {
     const file = e.target.files[0];
-    const base64: Base64<"png" | "jpg" | "jpeg"> | any = await convertBase64(file);
+    const base64: Base64<"png" | "jpg" | "jpeg"> | any = await convertBase64(
+      file
+    );
     setBaseImage(base64);
   };
 
-  const convertBase64 = (file:any) => {
+  const convertBase64 = (file: any) => {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
@@ -74,12 +76,14 @@ const Signup = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+      <div className={styles.fontBack}>Back</div>
         <SignUpComponent
           baseImage={baseImage}
           errorField={errorField}
           trainerData={trainerData}
           setTrainerData={setTrainerData}
           uploadImage={uploadImage}
+          header={"Sign Up"}
         />
         <Button className={styling.signUpButton} onClick={submitButton}>
           Submit

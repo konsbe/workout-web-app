@@ -23,9 +23,8 @@
   /* flex-shrink: 1; */
 }
 .child {
-  margin:5rem;
+  margin: 5rem;
   box-sizing: border-box;
-
 }
 
 .card {
@@ -88,18 +87,20 @@
   background: rgba(173, 255, 180, 0.9);
 }
 
-.card-stats .stat {
+.cardStats .stat {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   font-weight: 1000;
   color: rgb(255, 255, 255);
-  padding: 10px;
 }
 
-.card-stats .value {
+.cardStats .value {
   font-size: 1.5rem;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
 }
 
 .card:hover {

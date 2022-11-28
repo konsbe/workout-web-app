@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaEdit } from "react-icons/fa";
 import styles from "./Card.module.css";
 const courses = [
   {
     courseName: "Parkour",
-    courseMonths: "3 months",
+    courseMonths: "3",
     imgURL: "asd",
     courseDescription: "Learn the Basics",
     price: "30",
@@ -63,7 +63,7 @@ const Courses = ({ toggleOpenModal }: { toggleOpenModal: () => void }) => {
                     <div className={styles.stat}>
                       <div className={styles.value}>
                         <FaTimes
-                          style={{ color: "red", cursor: "pointer" }}
+                          style={{ color: "red", cursor: "pointer", width:"40px", height:"40px" }}
                           // onClick={() => dispatch(deleteCourseStart(documentID))}
                         />
                       </div>

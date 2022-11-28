@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { IconType } from "react-icons";
+import { MdSettingsSuggest } from "react-icons/md";
 import {
   FaTh,
   FaBars,
@@ -46,5 +46,10 @@ export const menuItems: menuItemType = [
     path: "/0123/my-exercises",
     name: "Exercises",
     Icon: FaThList,
+  },
+  {
+    path: "/0123/settings",
+    name: "Settings",
+    Icon: MdSettingsSuggest,
   },
 ];

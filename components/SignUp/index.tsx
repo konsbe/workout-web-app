@@ -6,19 +6,25 @@ import routestyles from "styles/SignUp.module.css";
 import { ITrainerData } from "../../types/types";
 
 export interface IProps {
-    baseImage:any;
-    errorField:string[];
-    trainerData:ITrainerData;
-    setTrainerData:(e:any) => ITrainerData | any;
-    uploadImage:(e:any) => void
+  baseImage: any;
+  errorField: string[];
+  trainerData: ITrainerData;
+  setTrainerData: (e: any) => ITrainerData | any;
+  uploadImage: (e: any) => void;
+  header: string;
 }
-const SignUpComponent = (props:IProps) => {
-  const { baseImage, errorField, trainerData, setTrainerData, uploadImage } =
-    props;
+const SignUpComponent = (props: IProps) => {
+  const {
+    baseImage,
+    errorField,
+    trainerData,
+    setTrainerData,
+    uploadImage,
+    header,
+  } = props;
   return (
     <>
-      <div className={styles.fontBack}>Back</div>
-      <span>Signup</span>
+      <span>{header}</span>
       <div
         className={`${styles.mainSectorRowFlex} ${routestyles.fieldsContainer}`}>
         <div

@@ -8,7 +8,7 @@
   width: 100%;
   padding: 20px;
   transition: all 0.5s;
-  margin-left:40px ;
+  margin-left: 40px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
   transition: all 0.5s;
   width: 100%;
   padding: 20px;
-  margin-left:190px ;
+  margin-left: 190px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -37,6 +37,8 @@
   display: flex;
   transition: all 0.5s;
   position: absolute;
+  width: 100%;
+  justify-content: center;
 }
 .menuItems {
   position: absolute;
@@ -66,6 +68,18 @@
 .logoClose {
   display: none;
 }
+.avatarOpen {
+  margin-top: 1rem;
+  transition: all 2s;
+  margin-bottom: 1rem;
+  flex-shrink: 2;
+}
+.avatarClose {
+  margin-top: 1rem;
+  transition: all 2s;
+  display: none;
+  flex-shrink: 2;
+}
 
 .link {
   display: flex;
@@ -90,7 +104,7 @@
   transition: all 0.5s;
   /* position: absolute; */
 }
-.active{
+.active {
   color: #000;
   box-shadow: 0px 0px 5px red;
   background: lightskyblue;
