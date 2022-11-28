@@ -30,7 +30,7 @@ const Sidebar = ({ children }: any) => {
         <Avatar
             alt="Remy Sharp"
             sx={{ width: 120, height: 120 }}
-            // src={}
+            src={"https://st3.depositphotos.com/3405399/18668/v/600/depositphotos_186684528-stock-illustration-weightlifting-snatch-silhouette-man.jpg"}
             // style={{ display: isOpen ? "" : "none", flexShrink:"2" }}
             className={isOpen ? styles.avatarOpen : styles.avatarClose}
           />
