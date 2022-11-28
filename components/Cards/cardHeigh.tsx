@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
+import { FaTimes } from "react-icons/fa";
 import styles from "./Card.module.css";
 const courses = [
   {
-    courseName: "1 asd",
-    courseMonths: "asd",
+    courseName: "Parkour",
+    courseMonths: "3 months",
     imgURL: "asd",
-    courseDescription: "asd",
-    price: "asd",
+    courseDescription: "Learn the Basics",
+    price: "30",
     documentID: "asd",
   },
   {
@@ -17,53 +18,13 @@ const courses = [
     price: "asd",
     documentID: "asd",
   },
-  {
-    courseName: "3 asd",
-    courseMonths: "asd",
-    imgURL: "asd",
-    courseDescription: "asd",
-    price: "asd",
-    documentID: "asd",
-  },
-  {
-    courseName: "4 asd",
-    courseMonths: "asd",
-    imgURL: "asd",
-    courseDescription: "asd",
-    price: "asd",
-    documentID: "asd",
-  },
-  {
-    courseName: "5 asd",
-    courseMonths: "asd",
-    imgURL: "asd",
-    courseDescription: "asd",
-    price: "asd",
-    documentID: "asd",
-  },
-  {
-    courseName: "6 asd",
-    courseMonths: "asd",
-    imgURL: "asd",
-    courseDescription: "asd",
-    price: "asd",
-    documentID: "asd",
-  },
-  {
-    courseName: "6 asd",
-    courseMonths: "asd",
-    imgURL: "asd",
-    courseDescription: "asd",
-    price: "asd",
-    documentID: "asd",
-  },
 ];
 
-const Courses = () => {
+const Courses = ({ toggleOpenModal }: { toggleOpenModal: () => void }) => {
   return (
-    <div className={styles.coursePage}>
+    <div className={styles.coursePage} onClick={toggleOpenModal}>
       <h3 className={styles.coursesHeader}></h3>
-      <div>
+      <div onClick={toggleOpenModal}>
         <div className={styles.courses}>
           {courses.map((course, index) => {
             const {
@@ -100,12 +61,12 @@ const Courses = () => {
                       <div className={styles.type}>Euro</div>
                     </div>
                     <div className={styles.stat}>
-                      {/* <div class="value">
-                    <FaTimes
-                      style={{ color: "red", cursor: "pointer" }}
-                      onClick={() => dispatch(deleteCourseStart(documentID))}
-                    />
-                  </div> */}
+                      <div className={styles.value}>
+                        <FaTimes
+                          style={{ color: "red", cursor: "pointer" }}
+                          // onClick={() => dispatch(deleteCourseStart(documentID))}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

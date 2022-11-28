@@ -9,12 +9,20 @@
   padding: 20px;
   transition: all 0.5s;
   margin-left:40px ;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .mainOpen {
   transition: all 0.5s;
   width: 100%;
   padding: 20px;
   margin-left:190px ;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sidebar {
@@ -79,6 +87,7 @@
 .icon,
 .link_text {
   font-size: 20px;
+  transition: all 0.5s;
   /* position: absolute; */
 }
 .active{

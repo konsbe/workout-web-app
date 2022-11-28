@@ -38,7 +38,7 @@ const Sidebar = ({ children }: any) => {
                 <Icon />
               </div>
               <div
-                style={{ display: isOpen ? "block" : "none" }}
+                style={{ display: isOpen ? "block" : "none", flexShrink:"0" }}
                 className={styles.link_text}>
                 {item.name}
               </div>

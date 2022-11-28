@@ -31,7 +31,7 @@ export default function Home() {
             <p>Click here to sign up as a trainer!</p>
           </Link>
 
-          <Link href="/home" className={styles.card}>
+          {/* <Link href="/home" className={styles.card}>
             <h2>Our Page &rarr;</h2>
             <p>Discover more about our website.</p>
           </Link>
@@ -43,7 +43,7 @@ export default function Home() {
             className={styles.card}>
             <h2>Coming on &rarr;</h2>
             <p>Check our latest feutures and what is on .</p>
-          </Link>
+          </Link> */}
         </div>
       </main>
 

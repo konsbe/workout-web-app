@@ -1,0 +1,28 @@
+
+.containerone {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: ; */
+}
+.containertwo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.addForm {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.formControl {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
