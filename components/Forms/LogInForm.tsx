@@ -17,37 +17,37 @@ const LoginFormComponent = (props: IProps) => {
   return (
     <>
       <span>{header}</span>
-        <div
-          className={`${styles.mainSectorColumnFlex} ${routestyles.mainSectorColumns}`}>
-          <TextField
-            error={errorField.join(" ").includes("email") ? true : false}
-            id="standard-basic"
-            label="email"
-            variant="standard"
-            style={{ marginBottom: "1rem" }}
-            value={loginData.email}
-            onChange={(e) => {
-              setLoginData({
-                ...loginData,
-                email: e.target.value,
-              });
-            }}
-          />
-          <TextField
-            error={errorField.join(" ").includes("password") ? true : false}
-            id="standard-basic"
-            style={{ marginBottom: "1rem" }}
-            label="Password"
-            variant="standard"
-            value={loginData.password}
-            onChange={(e) => {
-              setLoginData({
-                ...loginData,
-                password: e.target.value,
-              });
-            }}
-          />
-        </div>
+      <div
+        className={`${styles.mainSectorColumnFlex} ${routestyles.mainSectorColumns}`}>
+        <TextField
+          error={errorField.join(" ").includes("email") ? true : false}
+          id="standard-basic"
+          label="email"
+          variant="standard"
+          style={{ marginBottom: "1rem" }}
+          value={loginData.email}
+          onChange={(e) => {
+            setLoginData({
+              ...loginData,
+              email: e.target.value,
+            });
+          }}
+        />
+        <TextField
+          error={errorField.join(" ").includes("password") ? true : false}
+          id="standard-basic"
+          style={{ marginBottom: "1rem" }}
+          label="Password"
+          variant="standard"
+          value={loginData.password}
+          onChange={(e) => {
+            setLoginData({
+              ...loginData,
+              password: e.target.value,
+            });
+          }}
+        />
+      </div>
     </>
   );
 };

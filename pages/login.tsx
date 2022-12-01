@@ -5,7 +5,7 @@ import { createTrainer } from "../api/trainer.api";
 import SignUpComponent from "../components/SignUp";
 import styles from "../styles/Home.module.css";
 import styling from "../styles/SignUp.module.css";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import LoginFormComponent from "../components/Forms/LogInForm";
 
 type Base64<imageType extends string> =
@@ -15,9 +15,9 @@ const Signup = () => {
   const router = useRouter();
 
   const [errorField, setErrorField] = useState<any[]>([]);
-  const [loginData, setLoginData] = useState<any>({email:"",passsword:""});
+  const [loginData, setLoginData] = useState<any>({ email: "", passsword: "" });
   const submitButton = async () => {
-    router.push('/user/123/profile')
+    router.push("/user/123/profile");
   };
 
   return (
@@ -28,7 +28,7 @@ const Signup = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      <div className={styles.fontBack}>Back</div>
+        <div className={styles.fontBack}>Back</div>
         <LoginFormComponent
           errorField={errorField}
           loginData={loginData}

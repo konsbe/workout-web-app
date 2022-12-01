@@ -5,8 +5,10 @@ import React from "react";
 import { useState } from "react";
 import { FaHatWizard } from "react-icons/fa";
 import DayForm from "../../../../components/Forms/DayForm";
+import ProfileDataComponent from "../../../../components/Forms/ProfileForm";
 import WeekForm from "../../../../components/Forms/WeekForm";
 import styles from "../../../../styles/Forms.module.css";
+import { INITIAL_TRAINER_DATA } from "../../../../types/types";
 
 // var arrOfobj = [
 //   {
@@ -47,6 +49,14 @@ const Week = () => {
   );
   return (
     <>
+      <ProfileDataComponent
+        trainerData={INITIAL_TRAINER_DATA}
+        setTrainerData={()=>{}}
+        uploadImage={()=>{}}
+        header={"Trainee Profile Data"}
+        errorField={[""]}
+      />
+
       <WeekForm
         handleSubmit={handleSubmit}
         weekName={weekName}

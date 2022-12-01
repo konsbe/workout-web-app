@@ -12,12 +12,12 @@ import {
 } from "../../../types/types";
 import styles from "../../../styles/Home.module.css";
 import styling from "../../../styles/SignUp.module.css";
+import ProfileDataComponent from "../../../components/Forms/ProfileForm";
 
 type Base64<imageType extends string> =
   `data:image/${imageType};base64${string}`;
 export const Profile = () => {
   const [baseImage, setBaseImage] = useState("");
-  const [muiId, setMuiId] = useState();
   const [errorField, setErrorField] = useState<any[]>([]);
   const [trainerData, setTrainerData] =
     useState<ITrainerData>(INITIAL_TRAINER_DATA);
@@ -74,14 +74,12 @@ export const Profile = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <SignUpComponent
-          baseImage={baseImage}
-          errorField={errorField}
+        <ProfileDataComponent
           trainerData={trainerData}
           setTrainerData={setTrainerData}
           uploadImage={uploadImage}
-          header={"Update Profile Data"}
-        />
+          header={"Trainer Profile Data"} 
+          errorField={errorField}        />
         <Button className={styling.signUpButton} onClick={submitButton}>
           Submit
         </Button>

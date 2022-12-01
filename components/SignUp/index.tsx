@@ -15,7 +15,7 @@ import { ITrainerData } from "../../types/types";
 import ListItemText from "@mui/material/ListItemText";
 
 export interface IProps {
-  baseImage: any;
+  baseImage?: any;
   errorField: string[];
   trainerData: ITrainerData;
   setTrainerData: (e: any) => ITrainerData | any;

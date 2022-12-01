@@ -12,17 +12,10 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
-const getLayout = (page: React.ReactElement, router:NextRouter) => router.pathname.includes("user") ? <Sidebar>{page}</Sidebar> : page;
+const getLayout = (page: React.ReactElement, router: NextRouter) =>
+  router.pathname.includes("user") ? <Sidebar>{page}</Sidebar> : page;
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const router = useRouter();
-  console.log("router: ", router.pathname.includes("user"));
   return getLayout(<Component {...pageProps} />, router);
-
-  // return (
-  // <Sidebar>
-
-  // <Component {...pageProps} />
-  // </Sidebar>
-  // );
 }
