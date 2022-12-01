@@ -4,9 +4,9 @@ import React from "react";
 // import Day from "./Day";
 import { useState } from "react";
 import { FaHatWizard } from "react-icons/fa";
-import DayForm from "../../../components/Forms/DayForm";
-import WeekForm from "../../../components/Forms/WeekForm";
-import styles from "../../../styles/Forms.module.css";
+import DayForm from "../../../../components/Forms/DayForm";
+import WeekForm from "../../../../components/Forms/WeekForm";
+import styles from "../../../../styles/Forms.module.css";
 
 // var arrOfobj = [
 //   {
@@ -28,7 +28,6 @@ const Week = () => {
     // sched[`${weekName}`] = {};
     setWeekName("");
   };
-  HAZARD:[...HAZARD, value]
   // Object.entries(sched).map((key,value) => console.log(...key,value))
   const WeekComponent = React.useCallback(
     ({ sched }: { sched: Array<{}> }) => {

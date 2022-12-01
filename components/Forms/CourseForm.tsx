@@ -13,10 +13,11 @@ const CourseForm = ({
     description: "",
     duration: "",
     price: "",
-    personal: true
+    personal: true,
+    image:""
   });
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {console.log("course: ",course)};
 
   return (
     <div>
@@ -34,11 +35,20 @@ const CourseForm = ({
           />
         </div>
         <div className={styles.formControl}>
+          <label>Image: </label>
+          <input
+            type="text"
+            placeholder="name the day"
+            value={course.image}
+            onChange={(e) => setCourse({ ...course, image: e.target.value })}
+          />
+        </div>
+        <div className={styles.formControl}>
           <label>Description: </label>
           <input
             type="text"
             placeholder="name the day"
-            value={course.name}
+            value={course.description}
             onChange={(e) =>
               setCourse({ ...course, description: e.target.value })
             }
@@ -49,7 +59,7 @@ const CourseForm = ({
           <input
             type="text"
             placeholder="name the day"
-            value={course.name}
+            value={course.duration}
             onChange={(e) => setCourse({ ...course, duration: e.target.value })}
           />
         </div>
@@ -58,7 +68,7 @@ const CourseForm = ({
           <input
             type="text"
             placeholder="name the day"
-            value={course.name}
+            value={course.price}
             onChange={(e) => setCourse({ ...course, price: e.target.value })}
           />
         </div>

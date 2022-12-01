@@ -13,7 +13,7 @@ export const INITIAL_TRAINER_DATA = {
   country: "",
   area: "",
   phone_number: "",
-  trainer_type: 1,
+  trainer_type: [],
   description: "",
   weight: 1,
   height: 1,
@@ -34,7 +34,7 @@ export interface ITrainerData {
   country: string;
   area: string;
   phone_number: string;
-  trainer_type: number;
+  trainer_type: any;
   description: string;
   weight: number;
   height: number;

@@ -23,32 +23,32 @@ export const menuItems: menuItemType = [
     Icon: FaTh,
   },
   {
-    path: "/0123/profile",
+    path: "/user/0123/profile",
     name: "Profile",
     Icon: FaUserAlt,
   },
   {
-    path: "/0123/manage-users",
+    path: "/user/0123/manage-users",
     name: "Manage Users",
     Icon: FaRegChartBar,
   },
   {
-    path: "/0123/chat",
+    path: "/user/0123/chat",
     name: "Chat",
     Icon: FaCommentAlt,
   },
   {
-    path: "/0123/my-products",
+    path: "/user/0123/my-products",
     name: "Courses",
     Icon: FaShoppingBag,
   },
   {
-    path: "/0123/my-exercises",
+    path: "/user/0123/my-exercises",
     name: "Exercises",
     Icon: FaThList,
   },
   {
-    path: "/0123/settings",
+    path: "/user/0123/settings",
     name: "Settings",
     Icon: MdSettingsSuggest,
   },

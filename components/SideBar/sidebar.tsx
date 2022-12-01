@@ -17,7 +17,7 @@ const Sidebar = ({ children }: any) => {
     else if (asPath.includes("manage-users") && item.name === "Manage Users")
       return `${styles.active}`;
     else
-      return asPath.includes(item.name.toLowerCase()) ? `${styles.active}` : "";
+      return asPath.includes(item.name.toLowerCase()) ? `${styles.active}` : `${styles.close}`;
   };
 
   return (
@@ -31,7 +31,6 @@ const Sidebar = ({ children }: any) => {
             alt="Remy Sharp"
             sx={{ width: 120, height: 120 }}
             src={"https://st3.depositphotos.com/3405399/18668/v/600/depositphotos_186684528-stock-illustration-weightlifting-snatch-silhouette-man.jpg"}
-            // style={{ display: isOpen ? "" : "none", flexShrink:"2" }}
             className={isOpen ? styles.avatarOpen : styles.avatarClose}
           />
           {/* <h1 className={isOpen ? styles.logoOpen : styles.logoClose}>Logo</h1> */}
