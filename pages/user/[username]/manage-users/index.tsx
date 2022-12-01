@@ -27,6 +27,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { visuallyHidden } from "@mui/utils";
 import { alpha } from "@mui/material/styles";
+import { FcInfo } from "react-icons/fc";
 
 interface Data {
   id: number;
@@ -349,7 +350,7 @@ export default function EnhancedTable() {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    <div style={{width:"95%"}}>
+    <div style={{ width: "95%" }}>
       <Box>
         <Paper sx={{ width: "100%", mb: 2 }}>
           <EnhancedTableToolbar numSelected={selected.length} />
@@ -401,7 +402,13 @@ export default function EnhancedTable() {
                           {row.name}
                         </TableCell>
                         <TableCell align="right">
-                          <Link href="/user/:id/manage-users/123"> {row.name}</Link>
+                          <Tooltip title={`visit ${row.name} profile`}>
+                            <Link href="/user/:id/manage-users/123">
+                              {" "}
+                              {row.name}
+                              <FcInfo />
+                            </Link>
+                          </Tooltip>
                         </TableCell>
                         <TableCell align="right">{row.age}</TableCell>
                         <TableCell align="right">{row.weight}</TableCell>

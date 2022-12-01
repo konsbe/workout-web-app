@@ -11,6 +11,8 @@ const ExerciseForm = ({
     name: "",
     video: "",
     image: "",
+    category: "",
+    equipment: "",
   });
 
   const handleSubmit = () => {};
@@ -25,7 +27,7 @@ const ExerciseForm = ({
           <label>Name: </label>
           <input
             type="text"
-            placeholder="name the day"
+            placeholder="exercise name.."
             value={exercise.name}
             onChange={(e) => setExercise({ ...exercise, name: e.target.value })}
           />
@@ -34,7 +36,7 @@ const ExerciseForm = ({
           <label>Video: </label>
           <input
             type="text"
-            placeholder="name the day"
+            placeholder="exercise video.."
             value={exercise.video}
             onChange={(e) =>
               setExercise({ ...exercise, video: e.target.value })
@@ -45,10 +47,32 @@ const ExerciseForm = ({
           <label>Image: </label>
           <input
             type="text"
-            placeholder="name the day"
+            placeholder="exercise image.."
             value={exercise.image}
             onChange={(e) =>
               setExercise({ ...exercise, image: e.target.value })
+            }
+          />
+        </div>
+        <div className={styles.formControl}>
+          <label>Equipment: </label>
+          <input
+            type="text"
+            placeholder="available equipment.."
+            value={exercise.equipment}
+            onChange={(e) =>
+              setExercise({ ...exercise, equipment: e.target.value })
+            }
+          />
+        </div>
+        <div className={styles.formControl}>
+          <label>Image: </label>
+          <input
+            type="text"
+            placeholder="exercise category.."
+            value={exercise.category}
+            onChange={(e) =>
+              setExercise({ ...exercise, category: e.target.value })
             }
           />
         </div>
