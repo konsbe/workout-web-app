@@ -4,6 +4,7 @@ import React from "react";
 // import Day from "./Day";
 import { useState } from "react";
 import { FaHatWizard } from "react-icons/fa";
+import WeekMonthPicker from "../../../../components/DatePickers/WeekMonthPicker";
 import DayForm from "../../../../components/Forms/DayForm";
 import ProfileDataComponent from "../../../../components/Forms/ProfileForm";
 import WeekForm from "../../../../components/Forms/WeekForm";
@@ -51,17 +52,19 @@ const Week = () => {
     <>
       <ProfileDataComponent
         trainerData={INITIAL_TRAINER_DATA}
-        setTrainerData={()=>{}}
-        uploadImage={()=>{}}
+        setTrainerData={() => {}}
+        uploadImage={() => {}}
         header={"Trainee Profile Data"}
         errorField={[""]}
       />
-
-      <WeekForm
-        handleSubmit={handleSubmit}
-        weekName={weekName}
-        setWeekName={setWeekName}
-      />
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <WeekForm
+          handleSubmit={handleSubmit}
+          weekName={weekName}
+          setWeekName={setWeekName}
+        />
+        <WeekMonthPicker />
+      </div>
       <WeekComponent sched={sched} />
     </>
   );

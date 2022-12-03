@@ -13,6 +13,7 @@ import {
 import styles from "../../../styles/Home.module.css";
 import styling from "../../../styles/SignUp.module.css";
 import ProfileDataComponent from "../../../components/Forms/ProfileForm";
+import Editor from "../../../components/lexical/LexicalComponent";
 
 type Base64<imageType extends string> =
   `data:image/${imageType};base64${string}`;
@@ -83,6 +84,7 @@ export const Profile = () => {
         <Button className={styling.signUpButton} onClick={submitButton}>
           Submit
         </Button>
+        <Editor/>
       </main>
     </>
   );
