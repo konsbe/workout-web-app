@@ -202,5 +202,12 @@ pre::-webkit-scrollbar-thumb {
   /* background-image: url(./images/emoji/1F642.png); */
 /* } */
 .MuiDayPicker-monthContainer{
-  height: 40px;
+  /* height: 40px; */
 } 
+
+.PrivatePickersSlideTransition-root{
+    display: none;
+}
+.PrivatePickersSlideTransition-root .MuiDayPicker-slideTransition .css-sf5t6v-PrivatePickersSlideTransition-root-MuiDayPicker-slideTransition{
+  display: none;
+}
