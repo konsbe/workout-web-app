@@ -105,30 +105,11 @@ export const WeekMonthPicker = () => {
           flexDirection: "row",
           justifyContent: "space-around",
         }}>
-        {[...Array(parseInt(end["$D"]) - parseInt(start["$D"]) + 1)].map(
+        {/* {[...Array(parseInt(end["$D"]) - parseInt(start["$D"]) + 1)].map(
           (i, index) => {
             return <div key={index}> {parseInt(start["$D"]) + index}</div>;
           }
-        )}
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-        }}>
-        <button
-          onClick={(newValue) => {
-            setValue(value - 7);
-          }}>
-          +
-        </button>
-        <button
-          onClick={(newValue) => {
-            setValue(newValue);
-          }}>
-          -
-        </button>
+        )} */}
       </div>
     </div>
   );

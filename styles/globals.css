@@ -205,9 +205,6 @@ pre::-webkit-scrollbar-thumb {
   /* height: 40px; */
 } 
 
-.PrivatePickersSlideTransition-root{
+/* .PrivatePickersSlideTransition-root{
     display: none;
-}
-.PrivatePickersSlideTransition-root .MuiDayPicker-slideTransition .css-sf5t6v-PrivatePickersSlideTransition-root-MuiDayPicker-slideTransition{
-  display: none;
-}
+} */

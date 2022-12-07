@@ -4,6 +4,7 @@ import React from "react";
 // import Day from "./Day";
 import { useState } from "react";
 import { FaHatWizard } from "react-icons/fa";
+import PaperContentComponent from "../../../../components/DatePickers/FullPicker";
 import WeekMonthPicker from "../../../../components/DatePickers/WeekMonthPicker";
 import DayForm from "../../../../components/Forms/DayForm";
 import ProfileDataComponent from "../../../../components/Forms/ProfileForm";
@@ -64,6 +65,7 @@ const Week = () => {
           setWeekName={setWeekName}
         />
         <WeekMonthPicker />
+        <PaperContentComponent/>
       </div>
       <WeekComponent sched={sched} />
     </>
