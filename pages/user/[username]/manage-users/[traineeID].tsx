@@ -1,11 +1,6 @@
-import Button from "@mui/material/Button";
 import React from "react";
-// import Tasks from "./Tasks";
-// import Day from "./Day";
 import { useState } from "react";
-import { FaHatWizard } from "react-icons/fa";
-import PaperContentComponent from "../../../../components/DatePickers/FullPicker";
-import WeekMonthPicker from "../../../../components/DatePickers/WeekMonthPicker";
+import FullPicker from "../../../../components/DatePickers/FullPicker";
 import DayForm from "../../../../components/Forms/DayForm";
 import ProfileDataComponent from "../../../../components/Forms/ProfileForm";
 import WeekForm from "../../../../components/Forms/WeekForm";
@@ -58,14 +53,19 @@ const Week = () => {
         header={"Trainee Profile Data"}
         errorField={[""]}
       />
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div
+        style={{
+          width: "95%",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}>
+        <FullPicker />
         <WeekForm
           handleSubmit={handleSubmit}
           weekName={weekName}
           setWeekName={setWeekName}
         />
-        <WeekMonthPicker />
-        <PaperContentComponent/>
       </div>
       <WeekComponent sched={sched} />
     </>

@@ -1,19 +1,12 @@
 import {
   Avatar,
-  Checkbox,
-  Input,
-  MenuItem,
-  OutlinedInput,
-  Select,
   TextField,
 } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Forms.module.css";
-import routestyles from "styles/SignUp.module.css";
 import { ITrainerData } from "../../types/types";
-import ListItemText from "@mui/material/ListItemText";
 export interface IProps {
-  baseImage: any;
+  baseImage?: any;
   errorField: string[];
   trainerData: ITrainerData;
   setTrainerData: (e: any) => ITrainerData | any;
