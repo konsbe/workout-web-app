@@ -13,7 +13,7 @@ export const headCells: readonly HeadCell[] = [
     numeric: false,
     disablePadding: false,
     label: "Full Name",
-    info: "",
+    info: "VIew User's Profile",
   },
   {
     id: "age",

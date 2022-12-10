@@ -198,13 +198,10 @@ pre::-webkit-scrollbar-thumb {
   background-color: rgba(150, 150, 150, 0.4);
 }
 
-/* .emoji.happysmile { */
-  /* background-image: url(./images/emoji/1F642.png); */
-/* } */
-.MuiDayPicker-monthContainer{
-  /* height: 40px; */
-} 
+.pointer {
+  cursor: pointer;
+}
 
-/* .PrivatePickersSlideTransition-root{
-    display: none;
-} */
+.ml-1 {
+  margin-left: 0.1rem;
+}

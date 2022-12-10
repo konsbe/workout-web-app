@@ -68,17 +68,22 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             align={headCell.id === "id" ? "left" : "right"}
             padding={headCell.disablePadding ? "none" : "normal"}
             sortDirection={orderBy === headCell.id ? order : false}>
-            <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : "asc"}
-              onClick={createSortHandler(headCell.id)}>
-              {headCell.label}
-              {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}>
-                  {order === "desc" ? "sorted descending" : "sorted ascending"}
-                </Box>
-              ) : null}
-            </TableSortLabel>
+            <Tooltip title={`${headCell.info}`}>
+              <TableSortLabel
+                active={orderBy === headCell.id}
+                direction={orderBy === headCell.id ? order : "asc"}
+                onClick={createSortHandler(headCell.id)}>
+                {headCell.info && <FcInfo className="ml-1" />}
+                {headCell.label}
+                {orderBy === headCell.id ? (
+                  <Box component="span" sx={visuallyHidden}>
+                    {order === "desc"
+                      ? "sorted descending"
+                      : "sorted ascending"}
+                  </Box>
+                ) : null}
+              </TableSortLabel>
+            </Tooltip>
           </TableCell>
         ))}
       </TableRow>
@@ -230,6 +235,7 @@ export default function EnhancedTable() {
                 onRequestSort={handleRequestSort}
                 rowCount={rows.length}
               />
+
               <TableBody>
                 {/* if you don't need to support IE11, you can replace the `stableSort` call with:
               rows.sort(getComparator(order, orderBy)).slice() */}
@@ -242,13 +248,14 @@ export default function EnhancedTable() {
                     return (
                       <TableRow
                         hover
-                        onClick={(event) => handleClick(event, row.name)}
                         role="checkbox"
                         aria-checked={isItemSelected}
                         tabIndex={-1}
                         key={row.name}
                         selected={isItemSelected}>
-                        <TableCell padding="checkbox">
+                        <TableCell
+                          onClick={(event) => handleClick(event, row.name)}
+                          padding="checkbox">
                           <Checkbox
                             color="primary"
                             checked={isItemSelected}
@@ -261,7 +268,9 @@ export default function EnhancedTable() {
                           component="th"
                           id={labelId}
                           scope="row"
-                          padding="none">
+                          onClick={(event) => handleClick(event, row.name)}
+                          padding="none"
+                          className="pointer">
                           {row.name}
                         </TableCell>
                         <TableCell align="right">
@@ -269,7 +278,6 @@ export default function EnhancedTable() {
                             <Link href="/user/:id/manage-users/123">
                               {" "}
                               {row.name}
-                              <FcInfo />
                             </Link>
                           </Tooltip>
                         </TableCell>
