@@ -1,4 +1,3 @@
-
 .containerone {
   width: 100%;
   display: flex;
@@ -24,5 +23,30 @@
   width: 100%;
   display: flex;
   align-items: center;
+  margin: 0.4rem 0px 0.4rem 0px;
   justify-content: space-between;
+}
+.headerAddDay {
+  display: flex;
+  justify-content: center;
+}
+.section {
+  width: fit-content;  
+}
+.formCourseContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar{
+  margin: 0px 1rem 0px 0rem;
+  height: auto;
+  padding: 0.4rem 0rem 0.4rem 0rem;
+}
+
+@media screen and (max-width: 1000px){
+  .formLabel {
+    display: none;
+  }
+
 }

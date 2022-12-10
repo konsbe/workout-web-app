@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@mui/material";
+import { Avatar, Button, ButtonGroup, TextField } from "@mui/material";
 import React, { useState } from "react";
 import styles from "./Forms.module.css";
 
@@ -14,90 +14,115 @@ const CourseForm = ({
     duration: "",
     price: "",
     personal: true,
-    image:""
+    image: "",
   });
 
-  const handleSubmit = () => {console.log("course: ",course)};
+  const handleSubmit = () => {
+    console.log("course: ", course);
+  };
 
   return (
-    <div>
-      <form className={styles.addForm} onSubmit={handleSubmit}>
-        <header className="headerAddDay">
-          <h2>new course</h2>
-        </header>
-        <div className={styles.formControl}>
-          <label>Name: </label>
-          <input
-            type="text"
-            placeholder="name the day"
-            value={course.name}
-            onChange={(e) => setCourse({ ...course, name: e.target.value })}
-          />
+    <section className={styles.section}>
+      <header className={styles.headerAddDay}>
+        <h2>new course</h2>
+      </header>
+      <div className={styles.formCourseContainer}>
+        <div className={styles.avatar}>
+          <Avatar sx={{ bgcolor: "green", height: '100%', width: '100px' }} variant="rounded"></Avatar>
         </div>
-        <div className={styles.formControl}>
-          <label>Image: </label>
-          <input
-            type="text"
-            placeholder="name the day"
-            value={course.image}
-            onChange={(e) => setCourse({ ...course, image: e.target.value })}
-          />
+        <div>
+          <form className={styles.addForm} onSubmit={handleSubmit}>
+            <div className={styles.formControl}>
+              <label className={styles.formLabel}>Name: </label>
+              <TextField
+                id="outlined-basic"
+                value={course.name}
+                onChange={(e) => setCourse({ ...course, name: e.target.value })}
+                label="name.."
+                variant="outlined"
+              />
+            </div>
+            <div className={styles.formControl}>
+              <label className={styles.formLabel}>Image: </label>
+              <TextField
+                id="outlined-basic"
+                value={course.image}
+                onChange={(e) =>
+                  setCourse({ ...course, image: e.target.value })
+                }
+                label="image.."
+                variant="outlined"
+              />
+            </div>
+            <div className={styles.formControl}>
+              <label className={styles.formLabel}>Duration: </label>
+              <TextField
+                id="outlined-basic"
+                value={course.duration}
+                onChange={(e) =>
+                  setCourse({ ...course, duration: e.target.value })
+                }
+                label="duration.."
+                variant="outlined"
+              />
+            </div>
+            <div className={styles.formControl}>
+              <label className={styles.formLabel}>Price: </label>
+              <TextField
+                id="outlined-basic"
+                value={course.price}
+                onChange={(e) =>
+                  setCourse({ ...course, price: e.target.value })
+                }
+                label="Price in $.."
+                variant="outlined"
+              />
+            </div>
+            <div className={styles.formControl}>
+              <label className={styles.formLabel} style={{ alignSelf: "flex-start", marginTop: "8px" }}>
+                Description:{" "}
+              </label>
+              <TextField
+                id="standard-multiline-static"
+                multiline
+                rows={6}
+                label="description.."
+                value={course.description}
+                onChange={(e) =>
+                  setCourse({ ...course, description: e.target.value })
+                }
+                style={{ width: "235px" }}
+                variant="outlined"
+              />
+            </div>
+          </form>
         </div>
-        <div className={styles.formControl}>
-          <label>Description: </label>
-          <input
-            type="text"
-            placeholder="name the day"
-            value={course.description}
-            onChange={(e) =>
-              setCourse({ ...course, description: e.target.value })
-            }
-          />
-        </div>
-        <div className={styles.formControl}>
-          <label>Duration: </label>
-          <input
-            type="text"
-            placeholder="name the day"
-            value={course.duration}
-            onChange={(e) => setCourse({ ...course, duration: e.target.value })}
-          />
-        </div>
-        <div className={styles.formControl}>
-          <label>Price: </label>
-          <input
-            type="text"
-            placeholder="name the day"
-            value={course.price}
-            onChange={(e) => setCourse({ ...course, price: e.target.value })}
-          />
-        </div>
-        <ButtonGroup
-          disableElevation
-          variant="contained"
-          aria-label="Disabled elevation buttons"
-          style={{
-            width: "100%",
-            justifyContent: "center",
-            marginTop: "1rem",
-          }}>
-          <Button
-            type="submit"
-            className="btnTask btn-block"
-            style={{ width: "50%" }}
-            color="success">
-            Add
-          </Button>
-          <Button
-            className="btnTask btn-block"
-            onClick={toggleModal}
-            color="error"
-            style={{ width: "50%" }}>
-            Cancel
-          </Button>
-        </ButtonGroup>
-      </form>
-    </div>
+      </div>
+      <ButtonGroup
+        disableElevation
+        variant="contained"
+        aria-label="Disabled elevation buttons"
+        style={{
+          width: "100%",
+          justifyContent: "center",
+          marginTop: "1rem",
+        }}>
+        <Button
+          type="submit"
+          className="btnTask btn-block"
+          style={{ width: "50%" }}
+          color="success">
+          Add
+        </Button>
+        <Button
+          className="btnTask btn-block"
+          onClick={toggleModal}
+          color="error"
+          style={{ width: "50%" }}>
+          Cancel
+        </Button>
+      </ButtonGroup>
+    </section>
   );
 };
 
