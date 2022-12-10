@@ -23,17 +23,14 @@ const CourseForm = ({
 
   return (
     <section className={styles.section}>
-      <header className={styles.headerAddDay}>
-        <h2>new course</h2>
-      </header>
       <div className={styles.formCourseContainer}>
         <div className={styles.avatar}>
-          <Avatar sx={{ bgcolor: "green", height: '100%', width: '100px' }} variant="rounded"></Avatar>
+          <Avatar sx={{ bgcolor: "grey", height: '100%', width: '200px' }} variant="rounded"></Avatar>
         </div>
         <div>
           <form className={styles.addForm} onSubmit={handleSubmit}>
             <div className={styles.formControl}>
-              <label className={styles.formLabel}>Name: </label>
+              {/* <label className={styles.formLabel}>Name: </label> */}
               <TextField
                 id="outlined-basic"
                 value={course.name}
@@ -43,7 +40,7 @@ const CourseForm = ({
               />
             </div>
             <div className={styles.formControl}>
-              <label className={styles.formLabel}>Image: </label>
+              {/* <label className={styles.formLabel}>Image: </label> */}
               <TextField
                 id="outlined-basic"
                 value={course.image}
@@ -55,7 +52,7 @@ const CourseForm = ({
               />
             </div>
             <div className={styles.formControl}>
-              <label className={styles.formLabel}>Duration: </label>
+              {/* <label className={styles.formLabel}>Duration: </label> */}
               <TextField
                 id="outlined-basic"
                 value={course.duration}
@@ -67,7 +64,7 @@ const CourseForm = ({
               />
             </div>
             <div className={styles.formControl}>
-              <label className={styles.formLabel}>Price: </label>
+              {/* <label className={styles.formLabel}>Price: </label> */}
               <TextField
                 id="outlined-basic"
                 value={course.price}
@@ -79,9 +76,9 @@ const CourseForm = ({
               />
             </div>
             <div className={styles.formControl}>
-              <label className={styles.formLabel} style={{ alignSelf: "flex-start", marginTop: "8px" }}>
+              {/* <label className={styles.formLabel} style={{ alignSelf: "flex-start", marginTop: "8px" }}>
                 Description:{" "}
-              </label>
+              </label> */}
               <TextField
                 id="standard-multiline-static"
                 multiline
