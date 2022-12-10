@@ -11,13 +11,21 @@ const Sidebar = ({ children }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const { asPath } = useRouter();
-  const getActiveRouter = (item: { path?: string; name: any }) => {
-    if (asPath.split("/").includes("my-products") && item.name === "Courses")
-      return `${styles.active}`;
-    else if (asPath.includes("manage-users") && item.name === "Manage Users")
-      return `${styles.active}`;
+  const getActiveRouter = (
+    item: { path?: string; name: any },
+    isOpen: boolean
+  ) => {
+    if (
+      (asPath.split("/").includes("my-products") && item.name === "Courses") ||
+      (asPath.includes("manage-users") && item.name === "Manage Users")
+    )
+      return isOpen ? `${styles.activeOpen}` : `${styles.activeClose}`;
     else
-      return asPath.includes(item.name.toLowerCase()) ? `${styles.active}` : `${styles.close}`;
+      return asPath.includes(item.name.toLowerCase())
+        ? isOpen
+          ? `${styles.activeOpen}`
+          : `${styles.activeClose}`
+        : `${styles.close}`;
   };
 
   return (
@@ -27,10 +35,12 @@ const Sidebar = ({ children }: any) => {
           <TbArrowBigRightLines size={40} onClick={toggle} />
         </div>
         <div className={styles.top_section}>
-        <Avatar
+          <Avatar
             alt="Remy Sharp"
             sx={{ width: 120, height: 120 }}
-            src={"https://st3.depositphotos.com/3405399/18668/v/600/depositphotos_186684528-stock-illustration-weightlifting-snatch-silhouette-man.jpg"}
+            src={
+              "https://st3.depositphotos.com/3405399/18668/v/600/depositphotos_186684528-stock-illustration-weightlifting-snatch-silhouette-man.jpg"
+            }
             className={isOpen ? styles.avatarOpen : styles.avatarClose}
           />
           {/* <h1 className={isOpen ? styles.logoOpen : styles.logoClose}>Logo</h1> */}
@@ -40,12 +50,12 @@ const Sidebar = ({ children }: any) => {
             <Link
               href={item.path}
               key={index}
-              className={`${styles.link} ${getActiveRouter(item)}`}>
+              className={`${styles.link} ${getActiveRouter(item, isOpen)}`}>
               <div className={`${styles.icon}`}>
                 <Icon />
               </div>
               <div
-                style={{ display: isOpen ? "block" : "none", flexShrink:"0" }}
+                style={{ display: isOpen ? "block" : "none", flexShrink: "0" }}
                 className={styles.link_text}>
                 {item.name}
               </div>
