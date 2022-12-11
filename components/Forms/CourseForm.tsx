@@ -58,7 +58,7 @@ const CourseForm = ({
                   uploadImage(e, setBaseImage);
                   setCourse({ ...course, image: baseImage });
                 }}
-                style={{ marginBottom: "1rem" }}
+                style={{ marginBottom: "1rem", width: "235px" }}
               />
             </div>
             <div className={styles.formControl}>
@@ -118,7 +118,9 @@ const CourseForm = ({
           type="submit"
           className="btnTask btn-block"
           style={{ width: "50%" }}
-          color="success">
+          color="success"
+          onClick={handleSubmit}
+          >
           Add
         </Button>
         <Button

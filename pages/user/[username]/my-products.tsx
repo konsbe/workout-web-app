@@ -22,7 +22,8 @@ export const Products = () => {
       <ModalComponent
         hideModal={showModal}
         toggleModal={toggleModal}
-        modalHeader={"add new personal course"}>
+        modalHeader={"add new personal course"}
+        className="products-modal">
         <CourseForm toggleModal={toggleModal} />
       </ModalComponent>
       <Courses toggleOpenModal={toggleOpenModal} />
