@@ -17,6 +17,7 @@ export const INITIAL_TRAINER_DATA = {
   description: "",
   weight: 1,
   height: 1,
+  image:""
 };
 
 export interface ITrainerData {
@@ -38,6 +39,7 @@ export interface ITrainerData {
   description: string;
   weight: number;
   height: number;
+  image:any
 }
 export type TypeErrorItem = {
   loc: [];

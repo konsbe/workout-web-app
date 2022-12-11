@@ -50,10 +50,9 @@ const SignUpComponent = (props: IProps) => {
           error={errorField.join(" ").includes("image") ? true : false}
           id="standard-basic"
           type="file"
-          value={baseImage}
           onChange={(e) => {
             uploadImage(e);
-            // setTrainerData({ ...trainerData, image: e.target.value });
+            setTrainerData({ ...trainerData, image: baseImage });
           }}
           style={{ marginBottom: "1rem" }}
         />

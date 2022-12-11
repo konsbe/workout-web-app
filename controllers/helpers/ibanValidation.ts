@@ -66,7 +66,7 @@ export default class IbanValidation extends AbstractValidation {
   };
 
   public check_iban = () => {
-    console.log("sumnums: ", this.is_valid_iban(this.iban));
+    // console.log("sumnums: ", this.is_valid_iban(this.iban));
   };
 }
 

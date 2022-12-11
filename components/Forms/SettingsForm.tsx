@@ -41,7 +41,6 @@ const SettingsFormComponent = (props: IProps) => {
             error={errorField.join(" ").includes("image") ? true : false}
             id="standard-basic"
             type="file"
-            value={baseImage}
             onChange={(e) => {
               uploadImage(e);
               // setTrainerData({ ...trainerData, image: e.target.value });

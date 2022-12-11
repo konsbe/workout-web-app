@@ -1,5 +1,6 @@
-import { Avatar, Button, ButtonGroup, TextField } from "@mui/material";
+import { Avatar, Button, ButtonGroup, TextField, Input } from "@mui/material";
 import React, { useState } from "react";
+import { uploadImage } from "./forms";
 import styles from "./Forms.module.css";
 
 const CourseForm = ({
@@ -7,6 +8,9 @@ const CourseForm = ({
 }: {
   toggleModal: () => void;
 }): JSX.Element => {
+  const [baseImage, setBaseImage] = useState("");
+  const [errorField, setErrorField] = useState<any[]>([]);
+
   const [course, setCourse] = useState({
     name: "",
     trainerId: 1,
@@ -25,7 +29,11 @@ const CourseForm = ({
     <section className={styles.section}>
       <div className={styles.formCourseContainer}>
         <div className={styles.avatar}>
-          <Avatar sx={{ bgcolor: "grey", height: '100%', width: '200px' }} variant="rounded"></Avatar>
+          <Avatar
+            sx={{ bgcolor: "grey", height: "100%", width: "200px" }}
+            variant="rounded"
+            src={baseImage}
+          />
         </div>
         <div>
           <form className={styles.addForm} onSubmit={handleSubmit}>
@@ -41,14 +49,16 @@ const CourseForm = ({
             </div>
             <div className={styles.formControl}>
               {/* <label className={styles.formLabel}>Image: </label> */}
-              <TextField
-                id="outlined-basic"
-                value={course.image}
-                onChange={(e) =>
-                  setCourse({ ...course, image: e.target.value })
-                }
-                label="image.."
-                variant="outlined"
+              <Input
+                error={errorField.join(" ").includes("image") ? true : false}
+                id="standard-basic"
+                type="file"
+                // value={baseImage}
+                onChange={(e) => {
+                  uploadImage(e, setBaseImage);
+                  setCourse({ ...course, image: baseImage });
+                }}
+                style={{ marginBottom: "1rem" }}
               />
             </div>
             <div className={styles.formControl}>

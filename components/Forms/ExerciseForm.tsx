@@ -20,9 +20,6 @@ const ExerciseForm = ({
   return (
     <div>
       <form className={styles.addForm} onSubmit={handleSubmit}>
-        <header className="headerAddDay">
-          <h2>New Exercise</h2>
-        </header>
         <div className={styles.formControl}>
           <label>Name: </label>
           <input
