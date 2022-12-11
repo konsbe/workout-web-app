@@ -1,7 +1,10 @@
 import { Avatar, Button, ButtonGroup, TextField, Input } from "@mui/material";
 import React, { useState } from "react";
+import { COURSEPOST } from "../../env";
+import { TypeErrorItem } from "../../types/types";
 import { uploadImage } from "./forms";
 import styles from "./Forms.module.css";
+import { CourseType } from "./types";
 
 const CourseForm = ({
   toggleModal,
@@ -11,18 +14,40 @@ const CourseForm = ({
   const [baseImage, setBaseImage] = useState("");
   const [errorField, setErrorField] = useState<any[]>([]);
 
-  const [course, setCourse] = useState({
+  const [course, setCourse] = useState<CourseType>({
     name: "",
     trainerId: 1,
     description: "",
-    duration: "",
-    price: "",
+    duration: 1,
+    price: 0,
     personal: true,
     image: "",
   });
 
-  const handleSubmit = () => {
-    console.log("course: ", course);
+  const handleSubmit = async () => {
+    const response = await fetch(`http://${COURSEPOST}/courses/insertCourse`, {
+      method: "POST",
+      body: JSON.stringify({
+        name: course.name,
+        trainerId: course.trainerId,
+        description: course.description,
+        duration: course.duration,
+        price: course.price,
+        personal: course.personal,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        accept: "*/*",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST,PATCH,OPTIONS",
+      },
+    });
+    const data = await response.json();
+    if (response.status > 399) {
+      let arr: any[] = [];
+      data.detail.map((item: TypeErrorItem) => arr.push(...item.loc));
+      setErrorField([...arr]);
+    }
   };
 
   return (
@@ -66,6 +91,7 @@ const CourseForm = ({
               <TextField
                 id="outlined-basic"
                 value={course.duration}
+                type="number"
                 onChange={(e) =>
                   setCourse({ ...course, duration: e.target.value })
                 }
@@ -78,6 +104,7 @@ const CourseForm = ({
               <TextField
                 id="outlined-basic"
                 value={course.price}
+                type="number"
                 onChange={(e) =>
                   setCourse({ ...course, price: e.target.value })
                 }
@@ -119,8 +146,7 @@ const CourseForm = ({
           className="btnTask btn-block"
           style={{ width: "50%" }}
           color="success"
-          onClick={handleSubmit}
-          >
+          onClick={handleSubmit}>
           Add
         </Button>
         <Button
